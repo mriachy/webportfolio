@@ -1,56 +1,69 @@
-  * {
-      font-family: "Roboto", sans-serif;
-      font-weight: 400;
-      font-style: normal;
-    }
 
-h1, p, a{
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     font-style: normal;
-}
-
-
-.navbar-nav > li{
-    margin-left:20px;
-    margin-right:20px;
-    /* border: solid 1px black; */
-  }
-
-.navbar-nav{
-    /* margin-left: -185px; */
-}
-
-/* .navbar-toggler{
-    margin-right: 50px;
-} */
-
-#cb_logo{
-    width:2rem;
-    margin-left: 20px;
-    /* margin-inline-end: 15px; */
-    
-}
-
-#profile{
-    width: 25%;
-    border-radius: 50%;
-    
-}
+    margin: 0;
+    padding: 0;
+    }
 
 body{
     background-image: linear-gradient(45deg, rgba(86, 86, 86,0.04) 0%, rgba(86, 86, 86,0.04) 50%,rgba(169, 169, 169,0.04) 50%, rgba(169, 169, 169,0.04) 71%,rgba(251, 251, 251,0.04) 71%, rgba(251, 251, 251,0.04) 100%),linear-gradient(45deg, rgba(86, 86, 86,0.04) 0%, rgba(86, 86, 86,0.04) 56%,rgba(169, 169, 169,0.04) 56%, rgba(169, 169, 169,0.04) 67%,rgba(251, 251, 251,0.04) 67%, rgba(251, 251, 251,0.04) 100%),linear-gradient(135deg, rgba(86, 86, 86,0.04) 0%, rgba(86, 86, 86,0.04) 4%,rgba(169, 169, 169,0.04) 4%, rgba(169, 169, 169,0.04) 75%,rgba(251, 251, 251,0.04) 75%, rgba(251, 251, 251,0.04) 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
     background-attachment: fixed;
     background-size: cover;
+    color: white;
+    font-family: "Poppins", sans-serif;
 }
 
-#landing{
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+html{
+    scroll-behavior: smooth;
 }
-  
-  
+
+p{
+    color:white
+}
+
+a,
+.btn {
+    transition: all 300ms ease;
+}
+
+nav,
+.nav-links {
+    display: flex;
+}
+
+nav{
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+}
+
+.nav-links {
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.25rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    text-decoration-color: rgb(172, 172, 172);
+    color: rgb(172, 172, 172);
+}
+
+.nav-links a:hover {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+    text-decoration-color: white;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
