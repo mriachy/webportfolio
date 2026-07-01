@@ -8,19 +8,105 @@
         <link rel="stylesheet" type="text/css" href="./mediaqueries.css">
     </head>
     <body>
-        <nav id = "nav-desktop">
-            <div class = "logo">
-                Chey Bico
-            </div>
-            <div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
+        <header>
+            <nav id = "nav-desktop">
+                <div class = "logo">
+                    M< / ></>B
+                </div>
+                <div>
+                    <ul class="nav-links">
+                        <li><a href="#home">Home
+                            <div></div>
+                        </a></li>
+                        <li><a href="#about">About
+                            <div></div></a></li>
+                        <li><a href="#projects">Projects
+                            <div></div></a></li>
+                        <li><a href="#skills">Skills
+                            <div></div></a></li>
+                        <li><a href="#contact">Contact
+                            <div></div></a></li>
+                        <li><a href="#letstalk" class="btn">Let's Talk</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section id="home">
+                <div class="home-content">
+                    <h1>Hi, I'm Ma. Chey Cheneb Bico</h1>
+                    <p>I'm a web developer with a passion for creating beautiful and functional websites.</p>
+                    <div class="home-buttons">
+                        <a href="#projects" class="btn btn_active">View My Work</a>
+                        <a href="#letstalk" class="btn">Download Resume</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about">
+                <div class="about-content">
+                    <h2>About Me</h2>
+                    <p>I am a web developer with experience in HTML, CSS, JavaScript, and React. I enjoy building responsive and user-friendly websites that provide a great user experience.</p>
+                </div>
+            </section>
+
+            <section id="projects">
+                <div class="projects-content">
+                    <h2>My Projects</h2>
+                    <div class="project-list">
+                        <div class="project-item">
+                            <h3>Project 1</h3>
+                            <p>Description of project 1.</p>
+                        </div>
+                        <div class="project-item">
+                            <h3>Project 2</h3>
+                            <p>Description of project 2.</p>
+                        </div>
+                        <div class="project-item">
+                            <h3>Project 3</h3>
+                            <p>Description of project 3.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <div class="skills-content">
+                    <h2>My Skills</h2>
+                    <ul class="skills-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Node.js</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="contact">
+                <div class="contact-content">
+                    <h2>Contact Me</h2>
+                    <form id="contact-form">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </section> 
+
+            <section id="letstalk">
+                <div class="letstalk-content">
+                    <h2>Let's Talk</h2>
+                    <p>If you have any questions or would like to work together, feel free to reach out!</p>
+                    <a href="mailto:your.email@example.com" class="btn">Contact Me</a>
+                </div>
+            </section>
+
+            <footer>
+                <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+            </footer>
+        </main>
 
     <script src="script.js"></script>
     </body>
