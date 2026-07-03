@@ -6,6 +6,7 @@
     font-family: "Space Grotesk", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+
     }
 
 body{
@@ -19,6 +20,12 @@ html{
     scroll-behavior: smooth;
 }
 
+main{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
 p{
     color:white;
     font-size: 1.5rem;
@@ -27,7 +34,7 @@ p{
 
 h1{
     color:white;
-    font-size: 3rem;
+    font-size: 4rem;
     margin: 0 auto 1rem auto;
 }
 
@@ -36,6 +43,58 @@ a,
     transition: all 300ms ease;
 }
 
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid #5ca1ca;
+    color: #5ca1ca;
+    text-decoration: none;
+    font-size: 1.25rem;
+    min-width: fit-content;
+}
+
+.btn:hover {
+    background-color: #5ca1ca;
+    color: white;
+}
+
+.btn_active {
+    background-color: rgb(92, 161, 202);
+    color: white;
+}
+
+.btn_active:hover {
+    background-color: #000613;
+    color: #5ca1ca;
+}
+
+.btn i{
+    padding-left: 0.25rem;
+    font-size: 1rem;
+    height: 100%;
+
+}
+
+.btn.primary {
+  background-color: #5ca1ca;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background-color: #3B789A;
+}
+
+.btn.secondary {
+  background-color: #1a1f33;
+  color: #fff;
+}
+
+.btn.secondary:hover {
+  background-color: #3B789A;
+}
+
+
+/* Navigation */
 nav,
 .nav-links {
     display: flex;
@@ -50,7 +109,7 @@ nav{
 }
 
 .nav-links {
-    gap: 4rem;
+    gap: 3rem;
     list-style: none;
     font-size: 1.25rem;
 }
@@ -81,6 +140,10 @@ nav{
     color: #5ca1ca;
 }
 
+.nav-links a.btn:hover {
+    color: white;
+}
+
 .logo {
     font-size: 1.5rem;
 }
@@ -91,50 +154,31 @@ nav{
     height: 75px;
 }
 
-.btn {
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
-    border: 1px solid #5ca1ca;
-    color: #5ca1ca;
-    text-decoration: none;
-    font-size: 1.25rem;
-    min-width: fit-content;
-}
-
-.btn_active {
-    background-color: rgb(92, 161, 202);
-    color: white;
-}
-
-.btn:hover {
-    background-color: #5ca1ca;
-    color: white;
-}
-
-/* main{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-} */
-
 /* Section Styles */
 section {
-    max-height: 88vh;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
     margin-bottom: 2vh;
+}
+
+section h2{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
 }
 
 /* Home Section */
 #home {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     height: 88vh;
     min-height: 450px;
-    margin-left: 5%;
-    margin-right: 5%;
-}
+    margin: 0 5% 0 5%;
+    }
 
 .home-content {
     height: auto;
@@ -149,6 +193,10 @@ section {
     color: #b9bfc3;
 }
 
+.home-content p:nth-child(5){
+    font-size: 1.25rem;
+}
+
 .home-buttons {
     display: flex;
     justify-content: flex-start;
@@ -159,14 +207,30 @@ section {
     height: 10vh;
     min-height: 20px;
     text-align: center;
-    margin-top: 1rem;
+    margin: 1rem 0;
     
 }
 
-.home-buttons .btn i{
-    margin-left: 0.5rem;
-    font-size: 1rem;
+.connect_buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 0.5rem;
+    width: 100%;
+    min-height: 20px;
+    text-align: center;
+    
 }
+
+.connect_buttons i {
+    color: #5ca1ca;
+    font-size: 2rem;
+    text-decoration: none;
+    width: auto;
+    aspect-ratio: 1 / 1;
+}
+
 
 .hero{
     display: flex;
@@ -290,13 +354,88 @@ section {
     margin: 0 50px;
 }
 
+/* Projects Section */
 #projects {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
     min-height: 500px;
     margin: 0 50px;
+}
+
+.subtitle {
+    color: #b0b0b0;
+    margin-bottom: 3rem;
+}
+
+#project_grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.project_card {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;   
+    background-color: #0a1224;
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(122, 166, 255, 0.6);
+    width: 23%;
+    min-width: 325px;
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
+.project_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(122, 166, 255, 0.8);
+}
+
+.project_card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.project_card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.tech {
+    color: #b0b0b0;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.tech span {
+    color: #7aa6ff;
+}
+
+.desc {
+    color: #cfcfcf;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.project_buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    bottom: 0;
+    margin-top: auto;       
+    align-self: flex-start;
+}
+
+#projects .fab.fa-github{
+    padding-right: 0.25rem;
+    padding-left: 0;
 }
 
 #skills {
@@ -337,6 +476,7 @@ textarea {
     color: rgb(21, 8, 117);
 }
 
+/* Footer */
 footer {
     display: flex;
     justify-content: center;
@@ -344,5 +484,9 @@ footer {
     height: 10vh;
     min-height: 50px;
     margin: 0 50px;
+}
+
+footer p{
+    font-size: 1rem;
 }
 
