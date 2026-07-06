@@ -159,7 +159,11 @@ section {
     /* display: flex;
     justify-content: center;
     align-items: center; */
-    margin-bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    margin: 0 5% 5% 5%;
 }
 
 section h2{
@@ -177,7 +181,6 @@ section h2{
     flex-wrap: wrap;
     height: 88vh;
     min-height: 450px;
-    margin: 0 5% 0 5%;
     }
 
 .home-content {
@@ -232,16 +235,16 @@ section h2{
 }
 
 
-.hero{
+.hero_content{
     display: flex;
     justify-content: center;
     align-items: center;
     width:45%;
     height:auto;
-    min-width: 300px;
+    max-width: 50vw;
     position:relative;
-    overflow:hidden;
-    margin:0 auto;
+    overflow:visible;
+
 }
 
 /* Portrait */
@@ -277,6 +280,7 @@ section h2{
     border-radius:50%;
     margin-bottom: 5%;
     overflow:visible;
+    
 
     /* box-shadow:
         0 0 15px rgba(0,136,255,.2),
@@ -284,6 +288,8 @@ section h2{
 
     clip-path: inset(0 0 20% 0);
 }
+
+
 
 /* Gradient border using masking */
   .circle::before {
@@ -305,7 +311,7 @@ section h2{
 
 
 /* Glow behind portrait */
-.hero::before{
+.hero_content::before{
     content:"";
     position:absolute;
     width:120%;
@@ -346,22 +352,17 @@ section h2{
 
 
 #about {
+    /* In section CSS
     display: flex;
     justify-content: center;
     align-items: center;
-    height: vh;
-    min-height: 500px;
-    margin: 0 50px;
+    min-height: 500px; */
 }
 
 /* Projects Section */
 #projects {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 500px;
-    margin: 0 50px;
+
 }
 
 .subtitle {
@@ -439,21 +440,11 @@ section h2{
 }
 
 #skills {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 90vh;
-    min-height: 500px;
-    margin: 0 50px;
 }
 
 #contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 90vh;
-    min-height: 500px;
-    margin: 0 50px;
 }
 
 form {
@@ -481,6 +472,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
     height: 10vh;
     min-height: 50px;
     margin: 0 50px;
@@ -488,5 +481,9 @@ footer {
 
 footer p{
     font-size: 1rem;
+}
+
+footer img{
+    width: 5vw;
 }
 
