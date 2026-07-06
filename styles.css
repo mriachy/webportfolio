@@ -28,7 +28,7 @@ main{
 
 p{
     color:white;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     margin: 0;
 }
 
@@ -58,12 +58,12 @@ a,
     color: white;
 }
 
-.btn_active {
+.btn-active {
     background-color: rgb(92, 161, 202);
     color: white;
 }
 
-.btn_active:hover {
+.btn-active:hover {
     background-color: #000613;
     color: #5ca1ca;
 }
@@ -95,14 +95,16 @@ a,
 
 
 /* Navigation */
-nav,
-.nav-links {
+#nav-desktop,
+.nav-links,
+.hamburger-menu {
     display: flex;
 }
 
-nav{
+#nav-desktop{
     justify-content: space-between;
     align-items: center;
+    width: auto;
     height: 12vh;
     min-height: 50px;
     margin: 0 5%;
@@ -144,6 +146,11 @@ nav{
     color: white;
 }
 
+.hamburger-menu{
+    display: none;
+    font-size: 1.75rem;
+}
+
 .logo {
     font-size: 1.5rem;
 }
@@ -175,12 +182,12 @@ section h2{
 /* Home Section */
 #home {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: row-reverse;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    height: 88vh;
-    min-height: 450px;
+    max-height: 100vh;
+    min-height: 85vh;
     }
 
 .home-content {
@@ -188,8 +195,8 @@ section h2{
     max-width: 50vw;
     padding: o 30px 0 30px;
     width: auto;
-    align-items: center;
     margin-right: -5%;
+    justify-content: left;
 }
 
 .home-content p{
@@ -208,13 +215,13 @@ section h2{
     align-items: center;
     width: 100%;
     height: 10vh;
-    min-height: 20px;
+    min-height: 50px;
     text-align: center;
     margin: 1rem 0;
     
 }
 
-.connect_buttons {
+.connect-buttons {
     display: flex;
     justify-content: flex-start;
     gap: 1rem;
@@ -226,7 +233,7 @@ section h2{
     
 }
 
-.connect_buttons i {
+.connect-buttons i {
     color: #5ca1ca;
     font-size: 2rem;
     text-decoration: none;
@@ -235,13 +242,14 @@ section h2{
 }
 
 
-.hero_content{
+.hero-content{
     display: flex;
     justify-content: center;
     align-items: center;
-    width:45%;
+    width: auto;
     height:auto;
-    max-width: 50vw;
+    min-width: 40vw;
+    width: 45%;
     position:relative;
     overflow:visible;
 
@@ -311,7 +319,7 @@ section h2{
 
 
 /* Glow behind portrait */
-.hero_content::before{
+.hero-content::before{
     content:"";
     position:absolute;
     width:120%;
@@ -370,14 +378,14 @@ section h2{
     margin-bottom: 3rem;
 }
 
-#project_grid {
+#project-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
     justify-content: center;
 }
 
-.project_card {
+.project-card {
     display: flex;
     flex-direction: column; 
     justify-content: space-between;   
@@ -392,18 +400,18 @@ section h2{
   
 }
 
-.project_card:hover {
+.project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 25px rgba(122, 166, 255, 0.8);
 }
 
-.project_card img {
+.project-card img {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 1rem;
 }
 
-.project_card h3 {
+.project-card h3 {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 0.3rem;
@@ -425,7 +433,7 @@ section h2{
     margin-bottom: 1.5rem;
 }
 
-.project_buttons {
+.project-buttons {
     display: flex;
     justify-content: space-evenly;
     width: 100%;

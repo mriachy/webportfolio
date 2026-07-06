@@ -18,18 +18,18 @@ const projects = [
   // Add more projects here
 ];
 
-const container = document.getElementById("project_grid");
+const container = document.getElementById("project-grid");
 
 projects.forEach(project => {
   const card = document.createElement("div");
-  card.className = "project_card";
+  card.className = "project-card";
 
   card.innerHTML = `
     <img src="${project.image}" alt="${project.title} preview" />
     <h3>${project.title}</h3>
     <p class="tech">Developed with ${project.tech.map(t => `<span>${t}</span>`).join(", ")}</p>
     <p class="desc">${project.desc}</p>
-    <div class="project_buttons">
+    <div class="project-buttons">
       <a href="${project.demoLink}" target="_blank" class="btn primary">Live Demo <i class="fa-solid fa-arrow-right"></i></a>
       <a href="${project.githubLink}" target="_blank" class="btn secondary"><i class="fab fa-github"></i> GitHub</a>
     </div>
