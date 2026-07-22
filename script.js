@@ -1,7 +1,11 @@
+// LUCIDE ICONS
+lucide.createIcons();
+
+// PROJECT CARDS
 const projects = [
   {
     title: "DamaKita - Sentiment Analysis",
-    image: "images/damakita.png",
+    image: "assets/images/damakita.png",
     tech: ["Next.js", "Node.js", "OpenAI API"],
     desc: "A web app that combines sentiment analysis with a conversational chatbot powered by ChatGPT. Built to demonstrate AI integration, natural language processing, and responsive UI design.",
     demoLink: "https://damakitawithdaki.netlify.app",
@@ -9,7 +13,7 @@ const projects = [
   },
   {
     title: "Portfolio Website",
-    image: "images/portfolio.png",
+    image: "assets/images/portfolio.png",
     tech: ["HTML", "CSS", "JavaScript"],
     desc: "A responsive personal portfolio built with HTML, CSS, and JavaScript to showcase my skills, projects, and professional journey.",
     demoLink: "https://mccrbico.github.io/",
@@ -37,3 +41,74 @@ projects.forEach(project => {
 
   container.appendChild(card);
 });
+
+
+// ELEMENTS
+const nav = document.getElementById("navigation");
+const hamMenu = document.querySelector(".hamburger-menu");
+const navMenu = document.querySelector(".nav-menu");
+const navLinks = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll("section");
+
+// STATE
+let prevScroll = window.scrollY;
+
+// FUNCTIONS
+function toggleMenu() {
+  hamMenu.classList.toggle("active");
+  navMenu.classList.toggle("active");
+  nav.classList.toggle("active");
+}
+
+function closeMenu() {
+  hamMenu.classList.remove("active");
+  navMenu.classList.remove("active");
+  nav.classList.remove("active");
+}
+
+function updateActiveSection() {
+  let current = "home";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+
+    if (window.scrollY >= sectionTop - sectionHeight / 3) {
+      current = section.id;
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.toggle(
+      "active",
+      link.getAttribute("href") === `#${current}`
+    );
+  });
+}
+
+function handleNavbarScroll() {
+  const currentScroll = window.scrollY;
+
+  nav.style.top =
+    prevScroll > currentScroll ? "0.5vh" : "-90px";
+
+  prevScroll = currentScroll;
+
+  closeMenu();
+}
+
+
+// HAMBURGER MENU
+hamMenu.addEventListener("click", toggleMenu);
+
+navLinks.forEach(link => {
+  link.addEventListener("click", closeMenu);
+});
+
+// WINDOW SCROLL
+window.addEventListener("scroll", () => {
+  updateActiveSection();
+  handleNavbarScroll();
+});
+
+updateActiveSection();

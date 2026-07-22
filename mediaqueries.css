@@ -1,3 +1,84 @@
+@media screen and (min-width:  1024px){
+    #navigation{
+        width: 92dvw;
+        margin: 1.5rem 2rem 0 2rem;
+        flex-direction: space-evenly;
+        padding: 0 1.5rem;
+        border-radius: 50px;
+    }
+
+    .nav-menu{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 3rem;
+        width: fit-content;
+        margin-right: -1.4rem;
+        margin-bottom: 0;
+
+    }
+
+    .hamburger-menu{
+        display: none;
+    }
+
+    .logo img{
+        max-height: 35px;
+
+    }
+
+    #home{
+        flex-direction: row-reverse;
+    }
+
+    .home-content{
+        align-items: start;
+        margin-right: -5dvw;
+        /* padding-right: -5dvw; */
+        max-width: 45dvw;
+        p {
+            text-align: start;
+            font-size: 1.5em;
+        }
+
+        p:nth-child(5) {
+            font-size: 1rem;
+        }
+
+        h1{
+            text-align: start;
+            font-size: 4em;
+            margin-top: 0rem;
+        }
+    }
+
+    
+
+    .home-buttons {
+        a{
+        width: fit-content;
+        }
+    }
+
+    .connect-buttons{
+        justify-content: start;
+    }
+
+    .hero-content{
+        min-width: 20dvw;
+        width: 40dvw;
+        max-width: 50dvw;
+        margin-right: 5dvw;
+    }
+
+
+    .project-card{
+        margin: 0;
+        min-width: 20dvw;
+        max-width: 250px;
+    }
+}
+
 /* @media screen and (max-width: 950px) {
     #nav-desktop{
     }

@@ -6,37 +6,28 @@
     <title>Ma. Chey Cheneb Bico | Web Developer Portfolio</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <link rel="stylesheet" type="text/css" href="./mediaqueries.css">
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   </head>
   <body>
-    <header>
-      <nav id="nav-desktop">
+    <header id="navigation">
         <div class="logo">
-          <img src="./images/mccb_logo.svg" alt="MCCB Logo">
+          <a href="#home"><img src="assets/images/mccb_logo.svg" alt="MCCB Logo"></a>
         </div>
-        <div>
-          <ul class="nav-links">
-            <li>
-              <a href="#nav-desktop">Home<div></div></a>
-            </li>
-            <li>
-              <a href="#about">About<div></div></a>
-            </li>
-            <li>
-              <a href="#projects">Projects<div></div></a>
-            </li>
-            <li>
-              <a href="#skills">Skills<div></div></a>
-            </li>
-            <li>
-              <a href="#contact" class="btn primary">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
-            </li>
-          </ul>
-        </div>
-        <div class="hamburger-menu">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-      </nav>
+            <div class="hamburger-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+        <nav class="nav-menu">
+          <a class="nav-link" href="#home">Home</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#projects" >Projects</a>
+          <a class="nav-link" href="#skills">Skills</a>
+          <a href="#contact" class="nav-links btn primary">Let's Talk <i data-lucide="arrow-right"></i></a>
+        </nav>
+
     </header>
     <main>
       <section id="home">
@@ -48,7 +39,7 @@
           <div class="dots"></div>
 
           <!-- Portrait -->
-          <img src="images/portrait.png" alt="Portrait" class="portrait" />
+          <img src="assets/images/portrait.png" alt="Portrait" class="portrait" />
 
           <!-- Dotted Pattern -->
           <div class="dots"></div>
@@ -64,13 +55,13 @@
             code.
           </p>
           <div class="home-buttons">
-            <a href="#projects" class="btn primary">View My Work <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="docs/Resume (Ma. Chey Cheneb Bico).pdf"target="_blank"class="btn secondary">Download Resume <i class="fa-solid fa-download"></i></a>
+            <a href="#projects" class="btn primary">View My Work <i data-lucide="arrow-right"></i></a>
+            <a href="assets/docs/Resume (Ma. Chey Cheneb Bico).pdf" target="_blank"class="btn secondary">Download Resume <i data-lucide="download"></i></a>
           </div>
             <p>Connect with me:</p>
             <div class="connect-buttons">
-              <a href="https://www.linkedin.com/in/mccbico/" target="_blank"><i class="fab fa-linkedin"></i></a>
-              <a href="https://github.com/mccbico" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/mccbico/" target="_blank"><i class="fa-brands fa-square-linkedin"></i></a>
+              <a href="https://github.com/mccbico" target="_blank"><i class="fa-brands fa-github"></i></a>
               <a href="mailto:mccbico.dev@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
             </div>
           </div>
@@ -109,7 +100,7 @@
       </section>
 
       <section id="contact">
-        <div class="contact-content">
+        <!-- <div class="contact-content">
           <h2>Contact Me</h2>
           <form id="contact-form">
             <input type="text" name="name" placeholder="Your Name" required />
@@ -126,14 +117,15 @@
             ></textarea>
             <button type="submit">Send Message</button>
           </form>
-        </div>
+        </div> -->
       </section>
     </main>
     <footer>
-      <img src="./images/mccb_logo.svg" alt="MCCB Logo" />
+      <img src="assets/images/mccb_logo.svg" alt="MCCB Logo" />
       <p>Copyright &copy; 2026 MCCB. All rights reserved.</p>
     </footer>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="script.js"></script>
   </body>
 </html>

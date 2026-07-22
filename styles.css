@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
 
+:root {
+  --primary: #5ca1ca;
+  --background: #000613;
+  --surface: #0a1224;
+}
+
 * {
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
@@ -24,16 +30,16 @@ main {
   flex-direction: column;
 }
 
+[data-lucide] {
+  vertical-align: top;
+  height: 1.25rem;
+
+}
+
+
 p {
   color: white;
   margin: 0;
-}
-
-h1 {
-  color: white;
-  font-size: 1.75rem;
-  margin: 0 auto 1rem auto;
-  text-align: center;
 }
 
 a,
@@ -44,15 +50,15 @@ a,
 .btn {
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
-  border: 1px solid #5ca1ca;
-  color: #5ca1ca;
+  border: 1px solid var(--primary);
+  color: var(--primary);
   text-decoration: none;
   font-size: 1rem;
   min-width: fit-content;
 }
 
 .btn:hover {
-  background-color: #5ca1ca;
+  background-color: var(--primary);
   color: white;
 }
 
@@ -63,7 +69,7 @@ a,
 
 .btn-active:hover {
   background-color: #000613;
-  color: #5ca1ca;
+  color: var(--primary);
 }
 
 .btn i {
@@ -73,7 +79,7 @@ a,
 }
 
 .btn.primary {
-  background-color: #5ca1ca;
+  background-color: var(--primary);
   color: #fff;
 }
 
@@ -91,86 +97,180 @@ a,
 }
 
 /* Navigation */
-#nav-desktop,
-.nav-links,
+#navigation,
+.nav-menu,
 .hamburger-menu {
   display: flex;
+  flex-wrap: wrap;
 }
 
-header{
-  position: sticky;
-  top: 0;
-  padding: 0.5%;
-  background-color: #000613c8;
+#navigation {
+  position: fixed;
+  background-color: #0006134b;
+  top: 0.5vh;
+  padding:  0.75rem 1.5rem;
   z-index: 15;
-}
-
-#nav-desktop {
   justify-content: space-between;
+  justify-self: center;
   align-items: center;
-  width: auto;
-  height: 7.5vh;
-  min-height: 50px;
-  margin: 0 5%;
+  width: 75dvw;
+  border-radius: 50px;
+  backdrop-filter: blur(50px);  
+  margin: 2.5vh 5vh;
+  overflow: hidden;
+  z-index: 20;
+  transition: top 300ms ease;
 }
 
-.nav-links {
+#navigation.active{
+  border-radius: 1em;
+  /* background-color:#171a2a6d; */
+  
+}
+
+.nav-menu {
   display: none;
+  flex-direction: column;
   align-items: center;
-  gap: 3rem;
-  list-style: none;
+  width: 100%;
+  gap: 1.5rem;
   font-size: 1.25rem;
-}
+  bottom: 0;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}  
 
-.nav-links a {
+.nav-menu.active{
+  display: flex;
+  }
+
+
+
+.nav-link{
+  position: relative;
   text-decoration: none;
-  text-decoration-color: rgb(255, 255, 255);
-  color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);  
 }
 
-.nav-links a:hover div {
-  background-color: #5ca1ca;
-  width: 60%;
-  height: 2px;
-  margin: 5px auto;
+.nav-link::after{
+  content: "";
+  height: 0.1em;
+  width: 75%;
+  border-radius: 1em;
+  background-color: var(--primary);
+  position: absolute;
+  bottom: -0.65rem;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  align-self: center;
+  transition: transform 200ms ease;
+  transform-origin: center;
 }
 
-.nav-links a div {
-  background-color: rgb(255, 255, 255);
-  width: 0%;
-  height: 2px;
-  margin: 5px auto;
-  transition: all 300ms ease;
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link.active {
+  color: var(--primary);
 }
 
-.nav-links a:hover {
-  color: #5ca1ca;
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link.active::after {
+  transform: translateX(-50%) scaleX(1);
 }
 
-.nav-links a.btn:hover {
+.nav-link:active {
+  outline: none;
+  background: none;   /* or whatever your default is */
+  color: inherit;     /* reset to normal text color */
+}
+
+.nav-link.btn:hover {
   color: white;
 }
 
+/* HAMBURGER */
 .hamburger-menu {
-  display: flex;
-  font-size: 1.5rem;
+  position: relative;
+  margin-top: 0;
+  width: 7vw;
+  max-width: 30px;
+  height: 3vh;
+  max-height: 25px;
+  cursor: pointer;
+}
+
+.hamburger-menu span{
+  position: absolute;
+  height: 15%;
+  width: 100%;
+  background-color: white;
+  border-radius: 50px;
+  transition: all 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s;
+}
+
+.hamburger-menu span:nth-child(1){
+  top:0;
+}
+
+.hamburger-menu span:nth-child(2){
+  top:42%;
+  background-color: transparent;
+  transform: rotate(90deg);
+}
+
+.hamburger-menu span:nth-child(3){
+  top:42%;
+  background-color: transparent;
+}
+
+.hamburger-menu span:nth-child(4){
+  top:42%;
+}
+
+.hamburger-menu span:nth-child(5){
+  bottom:0; 
+}
+
+
+.hamburger-menu.active span:nth-child(1){
+  top:40%;
+  background-color: transparent;
+}
+.hamburger-menu.active span:nth-child(2){
+  background-color: white;
+  width: 100%;
+  transform: rotate(45deg);
+}
+.hamburger-menu.active span:nth-child(3){
+  background-color: white;
+  width: 100%;
+  transform: rotate(-45deg);
+}
+.hamburger-menu.active span:nth-child(4){
+  background-color: transparent;
+}
+.hamburger-menu.active span:nth-child(5){
+  bottom:40%;
+  background-color: transparent;
 }
 
 .logo img {
+  display: block;
+  padding: 0.5rem;
   width: auto;
-  height: 7.5vh;
+  height: 4vh;
+  max-height: 50px;
+  
 }
 
 /* Section Styles */
 section {
-  /* display: flex;
-    justify-content: center;
-    align-items: center; */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 5% 5% 5%;
-  padding: 5vh 0;
+  margin-top: 5dvh;
+  padding: 10vh 1dvw;
 }
 #about,
 #project,
@@ -189,23 +289,29 @@ section h2 {
 #home {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
-  align-items: self-start;
-  max-height: 90dvh;
-  min-height: 85dvh;
-  padding: 0;
+  min-height: 80dvh;
+  scroll-margin-top: 80px;
+  
 }
 
 .home-content {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 100%;
-  padding: 0 3vw;
+  padding: 0 5dvw;
   width: auto;
+}
+
+.home-content h1 {
+  color: white;
+  font-size: 2em;
+  margin: 0.5rem 0 1rem 0;
+  text-align: center;
 }
 
 .home-content p {
@@ -220,7 +326,7 @@ section h2 {
 
 .home-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
@@ -229,11 +335,16 @@ section h2 {
   min-height: fit-content;
   text-align: center;
   margin: 1rem 0;
+
+  i{
+    vertical-align: middle;
+  }
+
+  a{
+    width: 100%;
+  }
 }
 
-.home-buttons a {
-  width: 100%;
-}
 
 .connect-buttons {
   display: flex;
@@ -247,7 +358,7 @@ section h2 {
 }
 
 .connect-buttons i {
-  color: #5ca1ca;
+  color: var(--primary);
   font-size: 1.25rem;
   text-decoration: none;
   width: auto;
@@ -258,18 +369,17 @@ section h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 70vw;
-  height: 100%;
+  /* width: 7; */
+  max-width: 400px;
   position: relative;
   overflow: visible;
-  margin: 2vh;
 }
 
 /* Portrait */
 .portrait {
   display: flex;
   justify-content: center;
-  width: 85%;
+  width: 80%;
   z-index: 5;
 
   -webkit-mask-image: linear-gradient(
@@ -310,9 +420,15 @@ section h2 {
   background: conic-gradient(
     from 200deg,
     rgba(92, 161, 202, 0.65) 0deg 60deg,
-    /* Strong */ rgba(52, 52, 52, 0.5) 120deg 90deg /* Faded */
+    rgba(52, 52, 52, 0.5) 120deg 90deg
   );
-  /* Mask out the center so only the border remains */
+  
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(95% - 5%),
+    black calc(100% - 1%)
+  );
+
   -webkit-mask: radial-gradient(
     farthest-side,
     transparent calc(95% - 5%),
@@ -382,7 +498,7 @@ section h2 {
   flex-wrap: wrap;
   gap: 3rem;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 
 .project-card {
@@ -395,6 +511,7 @@ section h2 {
   box-shadow: 0 0 20px rgba(122, 166, 255, 0.6);
   min-width: 60vw;
   padding: 1.5rem;
+  margin: 0 2rem;
   text-align: left;
   transition:
     transform 0.3s ease,
@@ -448,11 +565,11 @@ section h2 {
   padding-left: 0;
 }
 
-#skills {
+/* #skills {
 }
 
 #contact {
-}
+} */
 
 form {
   display: flex;
@@ -469,7 +586,7 @@ input,
 textarea {
   padding: 0.5rem;
   border-radius: 5px;
-  border: 1px solid #5ca1ca;
+  border: 1px solid var(--primary);
   background-color: #cbd2da;
   color: rgb(21, 8, 117);
 }
