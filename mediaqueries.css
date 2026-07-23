@@ -55,6 +55,8 @@
     
 
     .home-buttons {
+        flex-direction: row;
+        height: 7.5vh;
         a{
         width: fit-content;
         }

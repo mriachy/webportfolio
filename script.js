@@ -90,7 +90,7 @@ function handleNavbarScroll() {
   const currentScroll = window.scrollY;
 
   nav.style.top =
-    prevScroll > currentScroll ? "0.5vh" : "-90px";
+    prevScroll > currentScroll ? "0.5vh" : "-160px";
 
   prevScroll = currentScroll;
 
@@ -112,3 +112,17 @@ window.addEventListener("scroll", () => {
 });
 
 updateActiveSection();
+
+const toggle = document.getElementById('theme-toggle');
+const modeText = document.querySelector('.mode-text');
+const slider = document.querySelector('.slider');
+
+toggle.addEventListener('change', () => {
+  const isDark = toggle.checked;
+  document.body.classList.toggle('dark-mode', isDark);
+  slider.classList.toggle('dark');
+  modeText.textContent = isDark ? 'Dark Mode' : 'Light Mode';
+});
+
+
+
