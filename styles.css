@@ -19,6 +19,7 @@ body {
   background-size: cover;
   color: white;
   font-family: "Poppins", sans-serif;
+  padding: 0 1rem;
 }
 
 html {
@@ -55,9 +56,9 @@ a,
   color: var(--primary);
   text-decoration: none;
   font-size: 1rem;
-  min-width: -webkit-fill-available; /* Samsung Internet 5.0+ */
+  /* min-width: -webkit-fill-available;
   min-width: -moz-available;
-  min-width: fit-content;
+  min-width: fit-content; */
 }
 
 .btn:hover {
@@ -111,17 +112,17 @@ a,
   position: fixed;
   background-color: #0006134b;
   top: 0.5vh;
+  left: 50%;
+  transform: translateX(-50%);
   padding:  0.75rem 1.5rem;
   z-index: 15;
   justify-content: space-between;
-  justify-self: center;
-  align-items: center;
+    align-items: center;
   width: 75dvw;
   border-radius: 50px;
   -webkit-backdrop-filter: blur(50px);
   backdrop-filter: blur(50px);  
-  margin: 2.5vh 5vh;
-  overflow: hidden;
+    overflow: hidden;
   z-index: 20;
   transition: top 300ms ease;
 }
@@ -309,6 +310,10 @@ section h2 {
   align-items: center;
   padding: 0 5dvw;
   width: auto;
+
+  p:nth-child(5){
+    font-size: 0.75rem;
+  }
 }
 
 .home-content h1 {
@@ -332,13 +337,10 @@ section h2 {
   text-align: center;
 }
 
-.home-content p:nth-child(5) {
-  font-size: 0.75rem;
-}
-
 .home-buttons {
   display: flex;
-  justify-content: column;
+  justify-content: center;
+  flex-direction: start;
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
